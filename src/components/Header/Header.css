@@ -1,4 +1,111 @@
 .header {
-  color: aquamarine;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 68px;
+  background: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  font-family: "Cabinet Grotesk", sans-serif;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  max-width: 1360px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerLogoText {
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 0%;
+  color: #000;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  font-size: 14px;
+  padding-left: 12px;
+  border-left: 1px solid #e0e0e0;
+}
+
+.date {
+  font-weight: 600;
+  color: #222;
+}
+
+.separator {
+  color: #ccc;
+}
+
+.location {
+  color: #777;
+  display: flex;
+  align-items: center;
+}
+
+.locationIcon {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s;
+  font-family: inherit;
+}
+
+.plus {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8c97e;
 }
