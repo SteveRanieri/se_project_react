@@ -7,7 +7,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { defaultClothingItems } from "../../utils/clothingItems";
 import { getWeather } from "../../utils/weatherApi";
-import { coordinates, APIkey } from "../../utils/constants";
+import { coordinates, apiKey } from "../../utils/constants";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -23,7 +23,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => setWeatherData(data))
       .catch(console.error);
   }, []);
@@ -45,7 +45,37 @@ function App() {
         isOpen={activeModal === "add-garment"}
         onClose={handleCloseModal}
       >
-        {/* Form inputs will go here */}
+        <div className="formGroup">
+          <label className="headerModalLabel" htmlFor="name">
+            Name
+          </label>
+          <input className="headerModalInput" id="name" placeholder="Name" />
+        </div>
+        <div className="formGroup">
+          <label className="headerModalLabel" htmlFor="imageUrl">
+            Image URL
+          </label>
+          <input
+            className="headerModalInput"
+            id="imageUrl"
+            placeholder="Image URL"
+          />
+        </div>
+        <div className="modalRadio">
+          <p>Select the weather type:</p>
+          <div>
+            <input type="radio" id="hot" name="temperature" value="hot" />
+            <label htmlFor="hot">Hot</label>
+          </div>
+          <div>
+            <input type="radio" id="warm" name="temperature" value="warm" />
+            <label htmlFor="warm">Warm</label>
+          </div>
+          <div>
+            <input type="radio" id="cold" name="temperature" value="cold" />
+            <label htmlFor="cold">Cold</label>
+          </div>
+        </div>
       </ModalWithForm>
 
       <ItemModal

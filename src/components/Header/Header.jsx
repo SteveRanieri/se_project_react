@@ -10,7 +10,7 @@ export default function Header({ weatherData, onAddClick }) {
     name: "Jane Smith",
     avatar: "https://i.pravatar.cc/40?img=47",
   };
-  const location = "San Francisco, CA";
+  const location = weatherData.city;
 
   return (
     <header className="header">

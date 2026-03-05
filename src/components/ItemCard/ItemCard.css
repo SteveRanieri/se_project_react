@@ -2,18 +2,23 @@
   font-family: "Cabinet Grotesk";
   list-style: none;
 }
+
+.cards {
+  padding-left: 40px;
+}
 .cards__list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin: 0;
 }
 
 .card__header {
   position: relative;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   border-radius: 8px;
 }
-
 .card__name {
   position: absolute;
   top: 15px;

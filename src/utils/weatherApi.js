@@ -7,11 +7,29 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
       return Promise.reject(`Error: ${res.status}`);
     })
     .then((data) => {
+      const isDay = data.dt > data.sys.sunrise && data.dt < data.sys.sunset;
+
+      const conditionMap = {
+        Clear: "clear",
+        Clouds: "cloudy",
+        Rain: "rainy",
+        Drizzle: "rainy",
+        Snow: "snowy",
+        Thunderstorm: "stormy",
+        Mist: "foggy",
+        Fog: "foggy",
+        Haze: "foggy",
+      };
+
+      const condition = conditionMap[data.weather[0].main] || "clear";
+
       return {
         city: data.name,
         temperature: {
           F: Math.round(data.main.temp),
         },
+        condition,
+        isDay,
       };
     });
 };

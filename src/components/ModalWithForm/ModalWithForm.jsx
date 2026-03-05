@@ -5,6 +5,7 @@ export default function ModalWithForm({
   buttonText,
   isOpen,
   onClose,
+  onSubmit,
   children,
 }) {
   if (!isOpen) return null;
@@ -16,10 +17,13 @@ export default function ModalWithForm({
           ✕
         </button>
         <h2 className="modal__title">{title}</h2>
-        <form className="modal__form">
+        <form className="modal__form" onSubmit={onSubmit}>
           {children}
           <button type="submit" className="modal__submit">
             {buttonText}
+          </button>
+          <button type="button" className="modal__cancel" onClick={onClose}>
+            Cancel
           </button>
         </form>
       </div>

@@ -1,0 +1,51 @@
+.item-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.item-modal__container {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  width: 360px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+  font-family: "Cabinet Grotesk", sans-serif;
+  overflow: hidden;
+}
+
+.item-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.item-modal__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.item-modal__footer {
+  padding: 16px;
+}
+
+.item-modal__name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.item-modal__weather {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}

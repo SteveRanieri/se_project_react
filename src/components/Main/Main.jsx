@@ -17,7 +17,7 @@ export default function Main({ weatherData, clothingItems, onCardClick }) {
 
   return (
     <main className="main">
-      <WeatherCard weatherData={weatherData} />
+      <WeatherCard className="weather" weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
           Today is {currentTemperature}°F / You may want to wear:
