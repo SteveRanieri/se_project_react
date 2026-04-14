@@ -13,7 +13,8 @@
   background: #fff;
   border-radius: 16px;
   padding: 28px;
-  width: 360px;
+  width: 496px;
+
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
   font-family: "Cabinet Grotesk", sans-serif;
 }
@@ -40,33 +41,55 @@
 }
 
 .modal__submit {
+  width: 124px;
   padding: 10px 0;
-  background: #1a1a2e;
-  color: #e8c97e;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  background: #000;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 4px;
+  font-weight: 700;
   font-size: 14px;
   cursor: pointer;
   font-family: inherit;
-  margin-top: 24px;
+}
+
+.modal__submit:disabled {
+  opacity: 30%;
+  cursor: not-allowed;
+}
+
+.modal__submit:hover:not(:disabled) {
+  opacity: 60%;
 }
 
 .formGroup {
   margin-bottom: 24px;
 }
 
-.headerModalLabel {
+.formGroupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.modalLabel {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 8px;
-  color: #555;
+  margin-bottom: 0;
+  color: #000;
 }
 
-.headerModalInput {
+.modalLabelError {
+  color: #ff0000;
+}
+
+.modalInput {
   width: 100%;
-  margin-bottom: 4px;
+
   border-style: none;
   border-bottom: 1px solid #000;
   font-size: 16px;
@@ -82,45 +105,40 @@
   font-size: 16px;
 }
 
-.modalActions {
+.modalRadioTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.modalRadioHeader {
   display: flex;
-  gap: 12px;
-  margin-top: 24px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.submitBtn {
-  flex: 1;
-  padding: 10px 0;
-  background: #1a1a2e;
-  color: #e8c97e;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  font-family: inherit;
+.modalRadio input[type="radio"] {
+  margin-bottom: 8px;
 }
 
-.submitBtn.cancel {
-  background: #eee;
-  color: #333;
+.modalRadio input[type="radio"]:not(:checked) + label {
+  opacity: 0.5;
 }
 
-.modal__actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
+.modalInputError {
+  border-color: #ff000099;
+  color: #ff0000;
 }
 
-.modal__cancel {
-  flex: 1;
-  padding: 10px 0;
-  background: #eee;
-  color: #333;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  font-family: inherit;
+.modalError {
+  margin-top: 8px;
+  display: none;
+  color: #ff0000;
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modalErrorVisible {
+  display: block;
 }

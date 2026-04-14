@@ -1,4 +1,5 @@
 import "./Header.css";
+import { useState } from "react";
 
 export default function Header({ weatherData, onAddClick }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -10,7 +11,9 @@ export default function Header({ weatherData, onAddClick }) {
     name: "Jane Smith",
     avatar: "https://i.pravatar.cc/40?img=47",
   };
-  const location = weatherData.city;
+  const location = weatherData.city || "City loading...";
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpened(!isMobileMenuOpened);
 
   return (
     <header className="header">
@@ -19,13 +22,17 @@ export default function Header({ weatherData, onAddClick }) {
           <span className="headerLogoText">wtwr°</span>
         </div>
 
-        <div className="meta">
-          <span className="date">{currentDate},</span>
-          <span className="location">{location}</span>
+        <div className="headerMeta">
+          <span className="headerDate">{currentDate},</span>
+          <span className="headerLocation">{location}</span>
         </div>
       </div>
-
-      <div className="right">
+      <button className="headerToggle" onClick={toggleMobileMenu}>
+        {isMobileMenuOpened ? "✕" : "☰"}
+      </button>
+      <div
+        className={`headerNav ${isMobileMenuOpened ? "headerNavOpened" : ""}`}
+      >
         <button className="addBtn" onClick={onAddClick}>
           <span className="plus">+</span> Add Clothes
         </button>

@@ -1,4 +1,4 @@
-.item-modal__overlay {
+.itemModalOverlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
@@ -8,7 +8,7 @@
   z-index: 999;
 }
 
-.item-modal__container {
+.itemModalContainer {
   position: relative;
   background: #fff;
   border-radius: 16px;
@@ -18,7 +18,7 @@
   overflow: hidden;
 }
 
-.item-modal__close {
+.itemModalClose {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -28,23 +28,23 @@
   cursor: pointer;
 }
 
-.item-modal__image {
+.itemModalImage {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-.item-modal__footer {
+.itemModalFooter {
   padding: 16px;
 }
 
-.item-modal__name {
+.itemModalName {
   font-size: 16px;
   font-weight: 700;
   margin: 0 0 8px;
 }
 
-.item-modal__weather {
+.itemModalWeather {
   font-size: 14px;
   color: #777;
   margin: 0;

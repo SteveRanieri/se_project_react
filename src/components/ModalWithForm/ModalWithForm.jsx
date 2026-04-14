@@ -6,6 +6,7 @@ export default function ModalWithForm({
   isOpen,
   onClose,
   onSubmit,
+  isValid,
   children,
 }) {
   if (!isOpen) return null;
@@ -17,13 +18,16 @@ export default function ModalWithForm({
           ✕
         </button>
         <h2 className="modal__title">{title}</h2>
-        <form className="modal__form" onSubmit={onSubmit}>
+        <form
+          className="modal__form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit?.(e);
+          }}
+        >
           {children}
-          <button type="submit" className="modal__submit">
+          <button type="submit" className="modal__submit" disabled={!isValid}>
             {buttonText}
-          </button>
-          <button type="button" className="modal__cancel" onClick={onClose}>
-            Cancel
           </button>
         </form>
       </div>

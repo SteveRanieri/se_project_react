@@ -3,11 +3,11 @@ import "./ItemCard.css";
 export default function ItemCard({ item, onCardClick }) {
   return (
     <li className="card">
-      <div className="card__header">
-        <p className="card__name">{item.name}</p>
+      <div className="cardHeader">
+        <p className="cardName">{item.name}</p>
       </div>
       <img
-        className="card__image"
+        className="cardImage"
         src={item.link}
         alt={item.name}
         onClick={() => onCardClick(item)}

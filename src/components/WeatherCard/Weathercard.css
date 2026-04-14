@@ -1,14 +1,15 @@
 .weather-card {
-  background-color: #00a3ff;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+
   background-repeat: no-repeat;
   border-radius: 12px;
-  margin-left: 40px;
+
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   height: 80px;
+  width: 100%;
+  max-width: 1360px;
 }
 
 .weather-card__temp {
@@ -17,8 +18,6 @@
   font-size: 36px;
   font-weight: 700;
 
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 16px;
+  padding: 20px 16px;
   margin: 0;
 }
