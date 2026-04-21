@@ -45,3 +45,5 @@ export default function Header({ weatherData, onAddClick }) {
     </header>
   );
 }
+
+// Troubleshooting Comment
