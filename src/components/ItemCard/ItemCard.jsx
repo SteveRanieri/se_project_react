@@ -3,9 +3,8 @@ import "./ItemCard.css";
 export default function ItemCard({ item, onCardClick }) {
   return (
     <li className="card">
-      <div className="cardHeader">
-        <p className="cardName">{item.name}</p>
-      </div>
+      <p className="cardName">{item.name}</p>
+
       <img
         className="cardImage"
         src={item.link}

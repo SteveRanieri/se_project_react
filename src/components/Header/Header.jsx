@@ -8,8 +8,8 @@ export default function Header({ weatherData, onAddClick }) {
   });
 
   const user = {
-    name: "Jane Smith",
-    avatar: "https://i.pravatar.cc/40?img=47",
+    name: "User",
+    avatar: "https://placehold.net/avatar.png",
   };
   const location = weatherData.city || "City loading...";
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);

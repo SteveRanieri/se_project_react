@@ -65,7 +65,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
+
     const newItem = {
       _id: Date.now(),
       name: formValues.name,
@@ -142,6 +142,7 @@ function App() {
             </span>
           </div>
           <input
+            type="url"
             className={`modalInput ${formErrors.imageUrl ? "modalInputError" : ""}`}
             id="imageUrl"
             name="imageUrl"

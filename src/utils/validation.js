@@ -16,8 +16,8 @@ const validationConfig = {
   },
 };
 
-const validateField = (name, value, cfg = validationConfig) => {
-  const rules = cfg.fields[name];
+const validateField = (name, value, config = validationConfig) => {
+  const rules = config.fields[name];
   if (!rules) return "";
   if (rules.required && !String(value).trim()) return rules.required;
   if (rules.pattern && !rules.pattern.value.test(value))
@@ -25,9 +25,9 @@ const validateField = (name, value, cfg = validationConfig) => {
   return "";
 };
 
-const isFormValid = (values, cfg = validationConfig) => {
-  return Object.keys(cfg.fields).every(
-    (field) => !validateField(field, values[field] ?? "", cfg),
+const isFormValid = (values, config = validationConfig) => {
+  return Object.keys(config.fields).every(
+    (field) => !validateField(field, values[field] ?? "", config),
   );
 };
 
