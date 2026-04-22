@@ -1,0 +1,41 @@
+.sunrise-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  font-family: "Cabinet Grotesk", monospace;
+}
+
+.sunrise-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sunrise-hud {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.sunrise-status {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 230, 180, 0.75);
+  font-style: italic;
+}
+
+.sunrise-pct {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255, 220, 150, 0.5);
+}

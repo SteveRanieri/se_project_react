@@ -1,0 +1,8 @@
+.page {
+  margin: 0;
+  padding: 0;
+}
+.page__content {
+  max-width: 1360px;
+  margin: 0 auto;
+}

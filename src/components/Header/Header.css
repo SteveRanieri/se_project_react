@@ -1,0 +1,148 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 68px;
+  background: #ffffff;
+  border: none;
+  font-family: "Cabinet Grotesk", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+}
+
+.headerLogoText {
+  font-weight: 900;
+  letter-spacing: 0;
+  color: #000;
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.headerDate {
+  font-weight: 600;
+  color: #222;
+}
+
+.headerLocation {
+  color: #777;
+  display: flex;
+  align-items: center;
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s;
+  font-family: inherit;
+}
+
+.addBtn:hover {
+  opacity: 0.7;
+}
+
+.addBtn:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.addBtn:focus:not(:focus-visible) {
+  outline: none;
+}
+.plus {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8c97e;
+}
+
+.headerToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .headerToggle {
+    display: block;
+  }
+
+  .headerNav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+  }
+
+  .headerNavOpened {
+    display: flex;
+  }
+
+  .header {
+    position: relative;
+  }
+}

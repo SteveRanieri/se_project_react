@@ -1,0 +1,36 @@
+import "./ModalWithForm.css";
+
+export default function ModalWithForm({
+  title,
+  buttonText,
+  isOpen,
+  onClose,
+  onSubmit,
+  isValid,
+  children,
+}) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal__overlay" onClick={onClose}>
+      <div className="modal__container" onClick={(e) => e.stopPropagation()}>
+        <button className="modal__close" onClick={onClose}>
+          ✕
+        </button>
+        <h2 className="modal__title">{title}</h2>
+        <form
+          className="modal__form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit?.(e);
+          }}
+        >
+          {children}
+          <button type="submit" className="modal__submit" disabled={!isValid}>
+            {buttonText}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}

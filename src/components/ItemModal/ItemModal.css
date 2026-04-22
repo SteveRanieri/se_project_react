@@ -1,0 +1,51 @@
+.itemModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.itemModalContainer {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  width: 360px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+  font-family: "Cabinet Grotesk", sans-serif;
+  overflow: hidden;
+}
+
+.itemModalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.itemModalImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.itemModalFooter {
+  padding: 16px;
+}
+
+.itemModalName {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.itemModalWeather {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}
