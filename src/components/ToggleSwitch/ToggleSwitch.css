@@ -1,0 +1,65 @@
+.toggleSwitch {
+  cursor: pointer;
+}
+
+.toggleSwitch__track {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.toggleSwitch__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: #000;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.toggleSwitch__thumb_right {
+  transform: translateX(28px);
+}
+
+/* .toggleSwitch__track:hover .toggleSwitch__thumb {
+  transform: translateX(2px);
+}
+
+.toggleSwitch__track:hover .toggleSwitch__thumb.toggleSwitch__thumb_right {
+  transform: translateX(26px);
+} */
+
+.toggleSwitch__label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 2;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.toggleSwitch__label_f {
+  left: 7px;
+}
+
+.toggleSwitch__label_c {
+  right: 7px;
+}
+
+.toggleSwitch__label_light {
+  color: #fff;
+}
+
+.toggleSwitch__label_dark {
+  color: #000;
+}

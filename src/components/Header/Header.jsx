@@ -1,7 +1,13 @@
 import "./Header.css";
 import { useState } from "react";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
-export default function Header({ weatherData, onAddClick }) {
+export default function Header({
+  weatherData,
+  onAddClick,
+  isFahrenheit,
+  onToggle,
+}) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -33,6 +39,7 @@ export default function Header({ weatherData, onAddClick }) {
       <div
         className={`headerNav ${isMobileMenuOpened ? "headerNavOpened" : ""}`}
       >
+        <ToggleSwitch isFahrenheit={isFahrenheit} onToggle={onToggle} />
         <button className="addBtn" onClick={onAddClick}>
           <span className="plus">+</span> Add Clothes
         </button>
