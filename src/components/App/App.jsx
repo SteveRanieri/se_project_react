@@ -11,7 +11,7 @@ import { defaultClothingItems } from "../../utils/clothingItems";
 import { getWeather } from "../../utils/weatherApi";
 import { coordinates, apiKey } from "../../utils/constants";
 import { validateField, isFormValid } from "../../utils/validation";
-import { TemperatureContext } from "../../context/TemperatureContext";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -20,7 +20,7 @@ function App() {
     temperature: { F: null },
   });
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-  const [isFahrenheit, setIsFahrenheit] = useState(true);
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -34,7 +34,11 @@ function App() {
   });
   const isValid = isFormValid(formValues);
 
-  const handleToggle = () => setIsFahrenheit(!isFahrenheit);
+  const handleToggleSwitchChange = () => {
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
+  };
   const handleOpenAddModal = () => setActiveModal("add-garment");
   const handleCloseModal = () => {
     setActiveModal("");
@@ -92,15 +96,12 @@ function App() {
   }
 
   return (
-    <TemperatureContext.Provider value={isFahrenheit}>
+    <CurrentTemperatureUnitContext.Provider
+      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+    >
       <div className="page">
         <div className="page__content">
-          <Header
-            weatherData={weatherData}
-            onAddClick={handleOpenAddModal}
-            isFahrenheit={isFahrenheit}
-            onToggle={handleToggle}
-          />
+          <Header weatherData={weatherData} onAddClick={handleOpenAddModal} />
           <Main
             weatherData={weatherData}
             clothingItems={clothingItems}
@@ -219,7 +220,7 @@ function App() {
           onClose={handleCloseModal}
         />
       </div>
-    </TemperatureContext.Provider>
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 

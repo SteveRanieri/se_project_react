@@ -1,12 +1,10 @@
 import "./WeatherCard.css";
 import { weatherConditions } from "../../utils/weatherOptions";
-import { useTemperature } from "../../context/TemperatureContext";
+import { useContext } from "react";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 export default function WeatherCard({ weatherData }) {
-  const isFahrenheit = useTemperature();
-  const temp = isFahrenheit
-    ? weatherData.temperature.F
-    : Math.round(((weatherData.temperature.F - 32) * 5) / 9);
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const weatherOption = weatherConditions.find(
     (option) =>
       option.day === weatherData.isDay &&
@@ -22,7 +20,7 @@ export default function WeatherCard({ weatherData }) {
     >
       <p className="weather-card__temp">
         {Number.isFinite(weatherData.temperature.F)
-          ? `${temp}°${isFahrenheit ? "F" : "C"}`
+          ? `${weatherData.temperature[currentTemperatureUnit]}°${currentTemperatureUnit}`
           : "Loading..."}
       </p>
     </section>

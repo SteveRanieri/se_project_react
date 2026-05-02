@@ -1,5 +1,9 @@
 .toggleSwitch {
   cursor: pointer;
+  caret-color: transparent;
+}
+.toggleSwitch__input {
+  display: none;
 }
 
 .toggleSwitch__track {
@@ -7,9 +11,13 @@
   width: 56px;
   height: 28px;
   background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 14px;
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
   overflow: hidden;
+}
+
+.toggleSwitch__track:hover {
+  border-color: #000;
 }
 
 .toggleSwitch__thumb {
@@ -19,7 +27,7 @@
   width: 28px;
   height: 28px;
   background: #000;
-  border-radius: 50%;
+  border-radius: 20px;
   transition: transform 0.3s ease;
   z-index: 1;
 }
@@ -28,13 +36,11 @@
   transform: translateX(28px);
 }
 
-/* .toggleSwitch__track:hover .toggleSwitch__thumb {
-  transform: translateX(2px);
-}
+.toggleSwitch__track:hover .toggleSwitch__thumb {
+  transform: translateX(50%);
 
-.toggleSwitch__track:hover .toggleSwitch__thumb.toggleSwitch__thumb_right {
-  transform: translateX(26px);
-} */
+  border-color: #000;
+}
 
 .toggleSwitch__label {
   position: absolute;
@@ -46,14 +52,15 @@
   z-index: 2;
   pointer-events: none;
   transition: color 0.3s ease;
+  user-select: none;
 }
 
 .toggleSwitch__label_f {
-  left: 7px;
+  left: 10px;
 }
 
 .toggleSwitch__label_c {
-  right: 7px;
+  right: 10px;
 }
 
 .toggleSwitch__label_light {
@@ -61,5 +68,5 @@
 }
 
 .toggleSwitch__label_dark {
-  color: #000;
+  color: #7e7e7e;
 }
