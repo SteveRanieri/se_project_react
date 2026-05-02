@@ -1,13 +1,9 @@
 import "./Header.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
-export default function Header({
-  weatherData,
-  onAddClick,
-  isFahrenheit,
-  onToggle,
-}) {
+export default function Header({ weatherData, onAddClick }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -24,9 +20,11 @@ export default function Header({
   return (
     <header className="header">
       <div className="headerLeft">
-        <div className="headerLogo">
-          <span className="headerLogoText">wtwr°</span>
-        </div>
+        <Link to="/">
+          <div className="headerLogo">
+            <span className="headerLogoText">wtwr°</span>
+          </div>
+        </Link>
 
         <div className="headerMeta">
           <span className="headerDate">{currentDate},</span>
@@ -39,18 +37,18 @@ export default function Header({
       <div
         className={`headerNav ${isMobileMenuOpened ? "headerNavOpened" : ""}`}
       >
-        <ToggleSwitch isFahrenheit={isFahrenheit} onToggle={onToggle} />
+        <ToggleSwitch />
         <button className="addBtn" onClick={onAddClick}>
           <span className="plus">+</span> Add Clothes
         </button>
 
-        <div className="user">
-          <span className="userName">{user.name}</span>
-          <img src={user.avatar} alt={user.name} className="avatar" />
-        </div>
+        <Link to="/profile" className="user">
+          <div className="user">
+            <span className="userName">{user.name}</span>
+            <img src={user.avatar} alt={user.name} className="avatar" />
+          </div>
+        </Link>
       </div>
     </header>
   );
 }
-
-// Troubleshooting Comment

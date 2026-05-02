@@ -14,20 +14,22 @@ export default function ToggleSwitch() {
         checked={currentTemperatureUnit === "C"}
         onChange={handleToggleSwitchChange}
       />
-      <div className="toggleSwitch__track">
+      <div className="toggleSwitch__container">
+        <div className="toggleSwitch__track">
+          <span
+            className={`toggleSwitch__label toggleSwitch__label_f ${currentTemperatureUnit === "C" ? "toggleSwitch__label_dark" : "toggleSwitch__label_light"}`}
+          >
+            F
+          </span>
+          <span
+            className={`toggleSwitch__label toggleSwitch__label_c ${currentTemperatureUnit === "F" ? "toggleSwitch__label_dark" : "toggleSwitch__label_light"}`}
+          >
+            C
+          </span>
+        </div>
         <div
           className={`toggleSwitch__thumb ${currentTemperatureUnit === "C" ? "toggleSwitch__thumb_right" : ""}`}
         />
-        <span
-          className={`toggleSwitch__label toggleSwitch__label_f ${currentTemperatureUnit === "C" ? "toggleSwitch__label_dark" : "toggleSwitch__label_light"}`}
-        >
-          F
-        </span>
-        <span
-          className={`toggleSwitch__label toggleSwitch__label_c ${currentTemperatureUnit === "F" ? "toggleSwitch__label_dark" : "toggleSwitch__label_light"}`}
-        >
-          C
-        </span>
       </div>
     </label>
   );

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "../../index.css";
 import Header from "../Header/Header";
+import Profile from "../Profile/Profile";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -102,11 +104,28 @@ function App() {
       <div className="page">
         <div className="page__content">
           <Header weatherData={weatherData} onAddClick={handleOpenAddModal} />
-          <Main
-            weatherData={weatherData}
-            clothingItems={clothingItems}
-            onCardClick={handleCardClick}
-          />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  clothingItems={clothingItems}
+                  onCardClick={handleCardClick}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  clothingItems={clothingItems}
+                  onCardClick={handleCardClick}
+                  onAddClick={handleOpenAddModal}
+                />
+              }
+            />
+          </Routes>
           <Footer />
         </div>
 
