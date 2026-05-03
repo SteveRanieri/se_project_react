@@ -1,9 +1,10 @@
 .sideBar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 16px;
   min-width: 280px;
+  align-self: flex-start;
 }
 
 .sideBar__avatar {

@@ -3,16 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
-export default function Header({ weatherData, onAddClick }) {
+export default function Header({ weatherData, onAddClick, currentUser }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
 
-  const user = {
-    name: "User",
-    avatar: "https://placehold.net/avatar.png",
-  };
   const location = weatherData.city || "City loading...";
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const toggleMobileMenu = () => setIsMobileMenuOpened(!isMobileMenuOpened);
@@ -43,10 +39,12 @@ export default function Header({ weatherData, onAddClick }) {
         </button>
 
         <Link to="/profile" className="user">
-          <div className="user">
-            <span className="userName">{user.name}</span>
-            <img src={user.avatar} alt={user.name} className="avatar" />
-          </div>
+          <span className="userName">{currentUser.name}</span>
+          <img
+            src={currentUser.avatar}
+            alt={currentUser.name}
+            className="avatar"
+          />
         </Link>
       </div>
     </header>

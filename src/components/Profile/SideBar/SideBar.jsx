@@ -1,14 +1,14 @@
 import "./SideBar.css";
 
-export default function SideBar() {
+export default function SideBar({ currentUser }) {
   return (
     <div className="sideBar">
       <img
         className="sideBar__avatar"
-        src="https://i.pravatar.cc/40?img=47"
-        alt="Jane Smith"
+        src={currentUser.avatar}
+        alt={currentUser.name}
       />
-      <p className="sideBar__username">Jane Smith</p>
+      <p className="sideBar__username">{currentUser.name}</p>
     </div>
   );
 }
