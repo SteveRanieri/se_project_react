@@ -35,7 +35,10 @@
 }
 
 .itemModalFooter {
-  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 24px;
 }
 
 .itemModalName {
@@ -48,4 +51,18 @@
   font-size: 14px;
   color: #777;
   margin: 0;
+}
+
+.itemModal__delete {
+  background: none;
+  border: none;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #e05c00;
+  cursor: pointer;
+}
+
+.itemModal__delete:hover {
+  opacity: 0.7;
 }

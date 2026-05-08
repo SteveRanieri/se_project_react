@@ -2,9 +2,13 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import { filterClothingItems } from "../../utils/temperature";
 import "./Main.css";
+import { useContext } from "react";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 export default function Main({ weatherData, clothingItems, onCardClick }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const currentTemperature = weatherData.temperature.F;
+
   const isLoaded = Number.isFinite(currentTemperature);
   const filteredItems = isLoaded
     ? filterClothingItems(clothingItems, currentTemperature)
@@ -15,7 +19,7 @@ export default function Main({ weatherData, clothingItems, onCardClick }) {
       <section className="cards">
         <p className="cards__text">
           {isLoaded
-            ? `Today is ${currentTemperature}°F / You may want to wear:`
+            ? `Today is ${weatherData.temperature[currentTemperatureUnit]}°${currentTemperatureUnit} / You may want to wear:`
             : "Loading weather..."}
         </p>
         <ul className="cardsList">

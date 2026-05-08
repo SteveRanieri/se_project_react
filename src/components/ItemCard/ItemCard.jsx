@@ -7,7 +7,7 @@ export default function ItemCard({ item, onCardClick }) {
 
       <img
         className="cardImage"
-        src={item.link}
+        src={item.imageUrl}
         alt={item.name}
         onClick={() => onCardClick(item)}
       />

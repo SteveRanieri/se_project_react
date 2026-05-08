@@ -27,6 +27,7 @@ export const getWeather = ({ latitude, longitude }, apiKey) => {
         city: data.name,
         temperature: {
           F: Math.round(data.main.temp),
+          C: Math.round((data.main.temp - 32) * 5 / 9),
         },
         condition,
         isDay,

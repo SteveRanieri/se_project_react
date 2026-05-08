@@ -5,5 +5,7 @@ export const getWeatherType = (temperature) => {
 };
 
 export const filterClothingItems = (items, temperature) => {
-  return items.filter((item) => item.weather === getWeatherType(temperature));
+  return items.filter(
+    (item) => item.weather.toLowerCase() === getWeatherType(temperature),
+  );
 };
